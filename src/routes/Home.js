@@ -41,6 +41,7 @@ const Home = ({ userObj }) => {
         />
         <input type="submit" value="Nweet" />
       </form> */}
+      
       <div>
         {nweets.map((nweet) => (
           <div key={nweet.id}>
