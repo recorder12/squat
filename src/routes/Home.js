@@ -13,7 +13,7 @@ const fail = ["다시!", "자세 불량!", "회원님 이건 무효에요", "회
 var count = 0;
 const modelURL = URL + "model.json";
 const metadataURL = URL + "metadata.json";
-const size = 200;
+const size = 450;
 const flip = true; // whether to flip the webcam
 var d = new Date();
 
@@ -78,10 +78,10 @@ const Home = ({ userObj }) => {
     const canvas = document.getElementById("canvas");
     canvas.width = size; canvas.height = size;
     ctx = canvas.getContext("2d");
-    labelContainer = document.getElementById("label-container");
-    for (let i = 0; i < maxPredictions; i++) { // and class labels
-        labelContainer.appendChild(document.createElement("div"));
-    }
+    // labelContainer = document.getElementById("label-container");
+    // for (let i = 0; i < maxPredictions; i++) { // and class labels
+    //     labelContainer.appendChild(document.createElement("div"));
+    // }
   }    
     async function loop(timestamp) {
       webcam.update(); // update the webcam frame
@@ -119,11 +119,11 @@ const Home = ({ userObj }) => {
         sentenceDisplay.innerHTML=sentence = "Watching... ";
       }
 
-      for (let i = 0; i < maxPredictions; i++) {
-          const classPrediction =
-              prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-          labelContainer.childNodes[i].innerHTML = classPrediction;
-      }
+      // for (let i = 0; i < maxPredictions; i++) {
+      //     const classPrediction =
+      //         prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+      //     labelContainer.childNodes[i].innerHTML = classPrediction;
+      // }
       // finally draw the poses
       drawPose(pose);
   }
@@ -154,23 +154,32 @@ const Home = ({ userObj }) => {
 
   return (
     <div>
-      <div className="title">Who is Squat King in this ground?! </div>
-      <div className="guide1">Step1) Start 버튼을 눌러 스쿼트를 시작하세요!!</div>
-      <div className="guide2">Step2) 왼쪽을 바라보고 정자세로 스쿼트를 하시면 갯수가 카운트됩니다!!</div>
-      <div className="guide3">Step3) 운동을 마친 후 End를 누리시면 당신의 기록이 갱신됩니다!!</div>
-      <button type="button" onClick={init}>Start</button>
-      <button type="button" onClick={end}>End</button>
-      <div><canvas id="canvas"></canvas></div>
-      <div id="label-container"></div>
-
-
-      <div className="score-container">
-        <div className="sentence" id="sentence">{sentence}</div>
-        <div className="score" id="score">{count}</div>
+  
+      <div className="guide_box">
+        <div className="guide1">Step1) Start 버튼을 눌러 스쿼트를 시작하세요!!</div>
+        <div className="guide2">Step2) 왼쪽을 바라보고 정자세로 스쿼트를 하시면 갯수가 카운트됩니다!!</div>
+        <div className="guide3">Step3) 운동을 마친 후 End를 누리시면 당신의 기록이 갱신됩니다!!</div>
       </div>
 
+      <div className="main_box">
+        <div className="screen">
+          <button type="button" onClick={init}>Start</button>
+          <button type="button" onClick={end}>End</button>
+          <div><canvas id="canvas"></canvas></div>
+          {/* <div id="label-container"></div> */}
+        </div>
 
-      <div>
+        <div className="score-container">
+            <div className="sentence" >
+              <span id="sentence">{sentence}</span>
+            </div>
+            <div className="score" id="score">
+              <span id="sentence">{count}</span>
+            </div>
+        </div>
+      </div>
+
+      <div className="feed">
         {nweets.map((nweet) => (
           <div key={nweet.id}>
             <h4>{nweet.nickname + "  did squat totally " + nweet.text + " counts (" + nweet.createdAt + ")" }</h4>
@@ -178,13 +187,6 @@ const Home = ({ userObj }) => {
         ))}
       </div>
 
-      {/* <div className="feed">
-        {nweets.map((nweet) => (
-          <div key={nweet.id}>
-            <h4>{newDisplayName + "  did squat totally  " +nweet.text + " counts!!" + "  (" + d.toUTCString() + ")"}</h4>
-          </div>
-        ))}
-      </div> */}
     </div>
     
   );

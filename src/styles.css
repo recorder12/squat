@@ -1,0 +1,93 @@
+@import "https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css";
+
+body {
+  font-family: sans-serif;
+  background-color: #ffffff;
+  max-width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* 
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+} */
+
+.guide_box {
+  font-family: sans-serif;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  max-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.guide1 {
+  margin-bottom: 20px;
+}
+.guide2 {
+  margin-bottom: 20px;
+}
+
+.main_box {
+  flex-direction: column;
+  align-items: center;
+}
+
+.screen {
+  width: 450px;
+  height: 470px;
+  background-color: rgb(121, 201, 247);
+}
+
+button {
+  height: 20px;
+  background: #1aa059;
+  color: #ffffff;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.score-container {
+  width: 450px;
+  height: 100px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #1aa059;
+}
+
+.sentence {
+  width: 50%;
+  height: 100px;
+  background-color: rgb(104, 236, 87);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.score {
+  width: 50%;
+  height: 100px;
+  background-color: rgb(144, 247, 233);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.feed {
+}
+
+/* 
+<div className="sentence" id="sentence">{sentence}</div>
+<div className="score" id="score">{count}</div>
+</div>
+
+</div>
+
+<div className="feed"> */
