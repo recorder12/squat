@@ -2,6 +2,7 @@
 
 body {
   font-family: sans-serif;
+  font-weight: bold;
   background-color: #ffffff;
   max-width: 100%;
   margin: auto;
@@ -44,7 +45,14 @@ body {
   background-color: rgb(121, 201, 247);
 }
 
-button {
+.start {
+  height: 20px;
+  background: #1aa059;
+  color: #ffffff;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.end {
   height: 20px;
   background: #1aa059;
   color: #ffffff;
@@ -70,6 +78,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid black;
 }
 
 .score {
@@ -79,15 +88,93 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid black;
 }
+
+.container {
+  margin-top: 20px;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .feed {
+  /* margin-bottom: 20px; */
+  background-color: rgb(236, 233, 10);
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 80%;
+}
+
+.youtube {
+  margin-top: 50px;
+}
+
+.login_page {
+  margin-top: 200px;
+}
+
+.title {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  font-size: 30px;
+  text-align: center;
+}
+.description {
+  margin-bottom: 50px;
+
+  text-align: center;
+  font-size: 20px;
+}
+.auth {
+  display: flex;
+  flex-direction: column;
+}
+
+.google {
+  margin-bottom: 20px;
+  height: 50px;
+  font-size: 20px;
+  background: #1aa059;
+  color: #ffffff;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.github {
+  margin-bottom: 20px;
+  height: 50px;
+  font-size: 20px;
+  background: #167fe0;
+  color: #ffffff;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.home_link {
+  margin-right: 30px;
+}
+
+.nav {
+  margin-bottom: 50px;
 }
 
 /* 
-<div className="sentence" id="sentence">{sentence}</div>
-<div className="score" id="score">{count}</div>
-</div>
-
-</div>
-
-<div className="feed"> */
+<div class="title">Who is Squat King in this ground?! </div>
+      <div class="auth">
+        <button onClick={onSocialClick} name="google">
+          Continue with Google
+        </button>
+        <button onClick={onSocialClick} name="github">
+          Continue with Github
+        </button>
+      </div>
+    </div> */

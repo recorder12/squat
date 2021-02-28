@@ -48,7 +48,7 @@ const Auth = () => {
     
   };
   return (
-    <div>
+    <div className="login_page">
       {/* <form onSubmit={onSubmit}>
         <input
           name="email"
@@ -75,12 +75,15 @@ const Auth = () => {
       <span onClick={toggleAccount}>
         {newAccount ? "Sign In" : "Create Account"}
       </span> */}
+
+
       <div class="title">Who is Squat King in this ground?! </div>
+      <div class="description">(Squat Competetion with AI)</div>
       <div class="auth">
-        <button onClick={onSocialClick} name="google">
+        <button className="google" onClick={onSocialClick} name="google">
           Continue with Google
         </button>
-        <button onClick={onSocialClick} name="github">
+        <button className="github" onClick={onSocialClick} name="github">
           Continue with Github
         </button>
       </div>

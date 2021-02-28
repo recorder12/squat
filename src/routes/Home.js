@@ -163,8 +163,8 @@ const Home = ({ userObj }) => {
 
       <div className="main_box">
         <div className="screen">
-          <button type="button" onClick={init}>Start</button>
-          <button type="button" onClick={end}>End</button>
+          <button type="button" className="start" onClick={init}>Start</button>
+          <button type="button" className="end" onClick={end}>End</button>
           <div><canvas id="canvas"></canvas></div>
           {/* <div id="label-container"></div> */}
         </div>
@@ -179,15 +179,16 @@ const Home = ({ userObj }) => {
         </div>
       </div>
 
-      <div className="feed">
+      <div className="container">
         {nweets.map((nweet) => (
-          <div key={nweet.id}>
+          <div style={{marginTop:10}} className="feed" key={nweet.id}>
             <h4>{nweet.nickname + "  did squat totally " + nweet.text + " counts (" + nweet.createdAt + ")" }</h4>
           </div>
         ))}
       </div>
 
     </div>
+
     
   );
 };

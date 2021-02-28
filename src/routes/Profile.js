@@ -33,8 +33,8 @@ export default ({ userObj }) => {
           value={newDisplayName}
         />
         <input type="submit" value="Update Profile" />
-      </form>
       <button onClick={onLogOutClick}>Log Out</button>
+      </form>
     </>
   );
 };
