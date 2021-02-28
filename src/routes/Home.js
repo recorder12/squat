@@ -126,9 +126,6 @@ const Home = ({ userObj }) => {
       }
       // finally draw the poses
       drawPose(pose);
-
-
-      console.log(count);
   }
 
   function drawPose(pose) {
@@ -150,7 +147,6 @@ const Home = ({ userObj }) => {
     nickname: userObj.displayName
     })
 
-    console.log(count);
     count = 0;
     status = "stand";
     window.location.reload();
