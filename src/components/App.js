@@ -24,7 +24,6 @@ function App() {
       ) : (
         "Initializing..."
       )}
-      <footer>&copy; {new Date().getFullYear()} by recorder12 </footer>
     </>
   );
 }

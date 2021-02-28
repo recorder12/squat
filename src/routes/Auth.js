@@ -49,7 +49,7 @@ const Auth = () => {
   };
   return (
     <div>
-      <form onSubmit={onSubmit}>
+      {/* <form onSubmit={onSubmit}>
         <input
           name="email"
           type="email"
@@ -74,8 +74,9 @@ const Auth = () => {
       </form>
       <span onClick={toggleAccount}>
         {newAccount ? "Sign In" : "Create Account"}
-      </span>
-      <div>
+      </span> */}
+      <div class="title">Who is Squat King in this ground?! </div>
+      <div class="auth">
         <button onClick={onSocialClick} name="google">
           Continue with Google
         </button>
