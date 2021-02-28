@@ -26,7 +26,7 @@ const Home = ({ userObj }) => {
   const [nweet, setNweet] = useState("");
   const [nweets, setNweets] = useState([]);
   const getNweets = async () => {
-    const dbNweets = await dbService.collection("nweets").get();
+    const dbNweets = await dbService.collection("nweets").orderBy("text").limit(20).get();
     dbNweets.forEach((document) => {
       const nweetObject = {
         ...document.data(),
@@ -34,6 +34,7 @@ const Home = ({ userObj }) => {
       };
       setNweets((prev) => [nweetObject, ...prev]);
     });
+
   };
   useEffect(() => {
     getNweets();
@@ -119,12 +120,6 @@ const Home = ({ userObj }) => {
         sentenceDisplay.innerHTML=sentence = "Watching... ";
       }
 
-      // for (let i = 0; i < maxPredictions; i++) {
-      //     const classPrediction =
-      //         prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-      //     labelContainer.childNodes[i].innerHTML = classPrediction;
-      // }
-      // finally draw the poses
       drawPose(pose);
   }
 
@@ -144,7 +139,8 @@ const Home = ({ userObj }) => {
     await dbService.collection("nweets").add({
       text: count, createdAt: d.toUTCString(),
     creatorId: userObj.uid,
-    nickname: userObj.displayName
+    nickname: userObj.displayName,
+    createdTime: Date.now()
     })
 
     count = 0;
@@ -178,6 +174,11 @@ const Home = ({ userObj }) => {
             </div>
         </div>
       </div>
+
+
+     
+      <div className="addthis_inline_share_toolbox_k4ye"></div>
+            
 
       <div className="container">
         {nweets.map((nweet) => (
